@@ -1,0 +1,21 @@
+# dependencies and build output
+node_modules
+dist
+*.tsbuildinfo
+
+# third-party agent skills installed by the skills CLI (reinstall with `npx skills add`)
+.agents
+.claude
+skills-lock.json
+
+# local environment files and private config
+.env
+.env.*
+!.env.example
+public/send-enquiry.config.php
+
+# only needed on the live site
+public/googled2be8eef685d4037.html
+
+.DS_Store
+Thumbs.db

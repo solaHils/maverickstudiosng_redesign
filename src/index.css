@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #fe1f00;
+  --color-canvas: #090909;
+  --color-surface-1: #141414;
+  --color-surface-2: #1c1c1c;
+  --color-hairline: #262626;
+  --color-ink-muted: #999999;
+}
+
+:root {
+  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  background: var(--color-canvas);
+  color: #fff;
+}
+
+/* Framer-style display type: heading font, aggressive negative tracking */
+.display {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+/* Headings: condensed sans, a nod to the original Maverick site */
+.heading-cond {
+  font-family: 'Open Sans', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  font-stretch: 75%;
+  font-variation-settings: 'wdth' 75;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+/* Subheadings: regular-weight body face, small and calm under the heading rule */
+.subheading {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Heading reveal: soft fade-up that resolves from a slight blur (set up by RevealOnScroll) */
+.reveal {
+  transition:
+    opacity 0.9s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.9s cubic-bezier(0.32, 0.72, 0, 1),
+    filter 0.9s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.reveal-delay {
+  transition-delay: 120ms;
+}
+.reveal-ready .reveal:not(.in) {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(6px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
